@@ -2,16 +2,12 @@ package ItemDatabase;
 
 public class Item 
 {
-	public int id;
+	public String id;
 	public String title;
 	public String description;
 	public int atk;
 
-	public Item() 
-	{
-	}
-
-	public Item(int id, String title, String description, int atk) 
+	public Item(String id, String title, String description, int atk) 
 	{
 		this.id = id;
 		this.title = title;
@@ -19,7 +15,11 @@ public class Item
 		this.atk = atk;
 	}
 
-	public int getId() 
+	public Item() 
+	{
+	}
+	
+	public String getId() 
 	{
 		return id;
 	}
