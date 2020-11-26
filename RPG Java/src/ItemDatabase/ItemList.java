@@ -8,14 +8,13 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class ItemList extends Item
 {
-	//public void itemData(int Line)
+	//public void itemData(String Line)
 	public static void main(String[] args) //delete this
 	{
-		Item data = new Item();
+		//Item data = new Item();
 		try 
 		{
 			File Obj = new File("items.txt");
-			int Line = 0; //delete this
 			/*FileInputStream is = new FileInputStream(Obj);
 
 			byte[] byteArray = new byte[(int) Obj.length()];
@@ -34,22 +33,28 @@ public class ItemList extends Item
 			int totalLines = stringArray.length / 4; -> Count number of lines in file*/
 
 			Scanner reader = new Scanner(Obj);
-			for (int i = 0; i < Line; i++) 
+			/*for (int i = 0; i < Line; i++) 
 			{
-				data.id = reader.nextInt();
-				String skip = reader.nextLine();
+				data.id = reader.nextLine();
+				//String skip = reader.nextLine();
 				data.title = reader.nextLine();
 				data.description = reader.nextLine();
 				data.atk = reader.nextInt();
-			}
+			}*/
 			
-			data = new Item();
-			data.id = reader.nextInt();
-			String skip = reader.nextLine();
+			/*data = new Item();
+			data.id = reader.nextLine();
+			//String skip = reader.nextLine();
 			data.title = reader.nextLine();
 			data.description = reader.nextLine();
-			data.atk = reader.nextInt();
-			
+			data.atk = reader.nextInt();*/
+			while(reader.hasNextLine())
+			{
+				if(reader.findInLine("03"/*Line <- String from MainGame*/) != null)
+					break;
+				reader.nextLine();
+			}
+			Item data = new Item(reader.nextLine(), reader.nextLine(), reader.nextLine(), reader.nextInt());
 			data.toString();
 			
 			reader.close();
