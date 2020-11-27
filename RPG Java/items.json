@@ -1,0 +1,23 @@
+[
+    {
+        "item": {
+            "title": "Wooden Sword",
+            "attack": "2",
+            "description": "A sword."
+        }
+    },
+    {
+        "item": {
+            "title": "Wooden Bow",
+            "attack": "1",
+            "description": "A bow."
+        }
+    },
+    {
+        "item": {
+            "title": "Wooden Staff",
+            "attack": "4",
+            "description": "A staff."
+        }
+    }  
+]
