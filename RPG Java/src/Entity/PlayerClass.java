@@ -19,15 +19,15 @@ public class PlayerClass extends PC
 		{
 			case "W":
 				this.baseHp = 20;
-				this.baseAtk = 5;
+				this.baseAtk = 3;
 				break;
 			case "A":
 				this.baseHp = 15;
-				this.baseAtk = 7;
+				this.baseAtk = 5;
 				break;
 			case "M":
 				this.baseHp = 10;
-				this.baseAtk = 9;
+				this.baseAtk = 7;
 				break;	
 		}	
 		this.crrHp = this.baseHp;

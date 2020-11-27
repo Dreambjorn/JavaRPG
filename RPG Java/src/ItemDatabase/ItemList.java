@@ -15,9 +15,12 @@ import org.json.simple.parser.ParseException;
 public class ItemList extends Item {
 	//static long startTime = System.nanoTime();
 	//-> use for MainGame !!!
-	public static Item itemData = new Item(); // -> (WIP) array for all items list to show them in inventory
+	//public Item itemData = new Item(); // -> (WIP) array for all items list to show them in inventory
 	//public static void main(String[] args) // delete this //
-	public void itemData(int id) 
+	public Item itemData[] = new Item[10];
+	private int count = 0;
+	@SuppressWarnings("unchecked")
+	public void itemData(/*int id*/) 
 	{
 		// Item data = new Item();
 		//try {
@@ -64,7 +67,8 @@ public class ItemList extends Item {
 				Object obj = parser.parse(reader);
 
 				JSONArray itemArray = (JSONArray) obj;
-				parseItems((JSONObject) itemArray.get(id));
+				itemArray.forEach( emp -> parseItems( (JSONObject) emp ) );
+				//parseItems((JSONObject) itemArray.get(id));
 
 			} catch (FileNotFoundException e) 
 			{
@@ -83,14 +87,20 @@ public class ItemList extends Item {
 		}*/
 	}
 	
-	private static void parseItems(JSONObject item) 
+	private void parseItems(JSONObject item) 
     {
         JSONObject itemObject = (JSONObject) item.get("item");
         
-        itemData = new Item((String) itemObject.get("title"), 
+        itemData[count] = new Item((String) itemObject.get("title"), 
         		Integer.parseInt((String) itemObject.get("attack")), 
         		(String) itemObject.get("description"),
         		(String) itemObject.get("role"));
+        
+        count ++;
+        /*itemData = new Item((String) itemObject.get("title"), 
+        		Integer.parseInt((String) itemObject.get("attack")), 
+        		(String) itemObject.get("description"),
+        		(String) itemObject.get("role"));*/
         
         //itemData.toString();
         /*long endTime = System.nanoTime();
