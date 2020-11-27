@@ -14,9 +14,10 @@ import org.json.simple.parser.ParseException;
 
 public class ItemList extends Item {
 	//static long startTime = System.nanoTime();
-	// public void itemData(int id) -> use for MainGame
-	public static Item itemData = new Item();
-	public static void main(String[] args) // delete this //
+	//-> use for MainGame !!!
+	public static Item itemData = new Item(); // -> (WIP) array for all items list to show them in inventory
+	//public static void main(String[] args) // delete this //
+	public void itemData(int id) 
 	{
 		// Item data = new Item();
 		//try {
@@ -55,7 +56,7 @@ public class ItemList extends Item {
 			 * Item(reader.nextLine(), reader.nextLine(), reader.nextLine(),
 			 * reader.nextInt());
 			 */
-			int id = 1;
+			//int id = 1;
 			JSONParser parser = new JSONParser();
 
 			try (FileReader reader = new FileReader("items.json")) 
@@ -86,8 +87,12 @@ public class ItemList extends Item {
     {
         JSONObject itemObject = (JSONObject) item.get("item");
         
-        itemData = new Item((String) itemObject.get("title"), (String) itemObject.get("attack"), (String) itemObject.get("description"));
-        itemData.toString();
+        itemData = new Item((String) itemObject.get("title"), 
+        		Integer.parseInt((String) itemObject.get("attack")), 
+        		(String) itemObject.get("description"),
+        		(String) itemObject.get("role"));
+        
+        //itemData.toString();
         /*long endTime = System.nanoTime();
         System.out.println("Took "+(endTime - startTime) + " ns"); */
     }
