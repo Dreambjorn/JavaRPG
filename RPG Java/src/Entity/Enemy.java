@@ -100,7 +100,8 @@ public class Enemy extends Character
 	{
 		System.out.println("Name: " + this.getName()
 				+ "\nHealth Points: " + baseHp 
-				+ "\nDescription: " + description);
+				+ "\nDescription: " + description
+				+ "\nAttack: " + maxAtk);
 		return "1";
 	}
 

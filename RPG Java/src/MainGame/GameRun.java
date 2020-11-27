@@ -13,28 +13,35 @@ public class GameRun
 		//Scanner input = new Scanner(System.in);
 		//String role = input.nextLine();
 	
-		PlayerClass player = new PlayerClass("Waifu", 0, "W");
+		PlayerClass player = new PlayerClass("Waifu", 0, "M");
 		EnemyList enemy = new EnemyList();
 		ItemList itemId = new ItemList();
 	
-		enemy.enemyData(1);
-		itemId.itemData(player.getEqItem());
-	
-		player.setMaxAtk(ItemList.itemData.getAtk());
-		enemy.enemyData.setMaxAtk(ItemList.itemData.getAtk());
+		enemy.enemyData();
+		itemId.itemData();
+		player.setMaxAtk(itemId.itemData[2].getAtk());
+		
+		itemId.itemData();
+		enemy.enemyData[0].setMaxAtk(itemId.itemData[enemy.enemyData[0].getEqItem()].getAtk());
 		player.toString();
-		enemy.enemyData.toString();
+		System.out.println("\n");
+		enemy.enemyData[0].toString();
+		System.out.println("\n");
 		//input.close();
-	
-		//while(player.getBaseHp() != 0 && enemy.getBaseHp() != 0)
-		//{
-			enemy.enemyData.setCrrHp(player.getMaxAtk());
-			Random rand = new Random();
-			int random = 18 + rand.nextInt(55);
-			if(random >= 50)
-				player.setCrrHp(enemy.enemyData.getMaxAtk());
-			System.out.println(player.getCrrHp());
-			System.out.println(enemy.enemyData.getCrrHp());
-		//}
+		//Battle system: 
+		Random rand = new Random();
+		while(player.getCrrHp() > 0 && enemy.enemyData[0].getCrrHp() > 0)
+		{
+			enemy.enemyData[0].setCrrHp(player.getMaxAtk());
+			if(enemy.enemyData[0].getCrrHp() <= 0)
+				break;
+			int random = 15 + rand.nextInt(60);
+			if(random >= 60)
+				player.setCrrHp(enemy.enemyData[0].getMaxAtk());
+			if(player.getCrrHp() <= 0)
+				break;
+		}
+		System.out.println(player.getName() + "'s remaining HP: " + player.getCrrHp());
+		System.out.println(enemy.enemyData[0].getName() + "'s remaining HP: " + enemy.enemyData[0].getCrrHp());
 	}
 }
