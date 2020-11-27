@@ -1,0 +1,32 @@
+[
+    {
+        "enemy": {
+            "name": "Bandit",
+            "attack": "2",
+            "description": "A bandit.",
+            "item": "0",
+            "basehp": "12",
+            "basexp": "2"
+        }
+    },
+    {
+        "enemy": {
+            "name": "Troll",
+            "attack": "10",
+            "description": "An ugly troll.",
+            "item": "0",
+            "basehp": "20",
+            "basexp": "10"
+        }
+    },
+    {
+        "enemy": {
+            "name": "Mage",
+            "attack": "1",
+            "description": "A mage.",
+            "item": "2",
+            "basehp": "9",
+            "basexp": "3"
+        }
+    }  
+]
