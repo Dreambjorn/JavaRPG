@@ -8,7 +8,7 @@ import Entity.EnemyList;
 
 public class GameRun 
 {
-	public static void main(String[] args)
+	//public static void main(String[] args)
 	{
 		//Scanner input = new Scanner(System.in);
 		//String role = input.nextLine();
@@ -20,7 +20,7 @@ public class GameRun
 		enemy.enemyData();
 		itemId.itemData();
 		player.setMaxAtk(itemId.itemData[2].getAtk());
-		
+		//need a separate class + method for initializing the enemies+items
 		itemId.itemData();
 		enemy.enemyData[0].setMaxAtk(itemId.itemData[enemy.enemyData[0].getEqItem()].getAtk());
 		player.toString();
@@ -28,7 +28,7 @@ public class GameRun
 		enemy.enemyData[0].toString();
 		System.out.println("\n");
 		//input.close();
-		//Battle system: 
+		//Battle system: (need a separate class for the battle system)
 		Random rand = new Random();
 		while(player.getCrrHp() > 0 && enemy.enemyData[0].getCrrHp() > 0)
 		{

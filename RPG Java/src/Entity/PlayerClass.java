@@ -94,8 +94,23 @@ public class PlayerClass extends PC
 	@Override
 	public String toString()
 	{
+		String roleString = "";
+		switch(role)
+		{
+			case "W":
+				roleString = "Warrior";
+				break;
+			case "A":
+				roleString = "Archer";
+				break;
+			case "M":
+				roleString = "Mage";
+				break;	
+		}	
+		
 		System.out.println("Name: " + this.getName()
-				+ "\nHealth Points: " + baseHp 
+				+ "\nHealth Points: " + baseHp
+				+ "\nClass: " + roleString
 				+ "\nAttack: " + maxAtk);
 		return "1";
 	}
