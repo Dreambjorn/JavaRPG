@@ -24,7 +24,7 @@ public class Interface
 	JPanel returnButtonPanel, titlePanel, startButtonPanel, exitButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel;
 	JLabel titleLabel, hpLabel, nameLabel, weaponLabel;
 	JButton returnButton, startButton, exitButton, choice1, choice2, choice3, choice4;
-	Font titleFont = new Font("Times New Roman", Font.PLAIN, 60);
+	Font titleFont = new Font("Times New Roman", Font.PLAIN, 100);
 	Font commFont = new Font("Times New Roman", Font.PLAIN, 30);
 	Font statsFont = new Font("Times New Roman", Font.PLAIN, 30);
 	JTextArea mainTextArea;
@@ -45,33 +45,39 @@ public class Interface
 	{
 		GraphicsEnvironment gEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		gDevice = gEnvironment.getDefaultScreenDevice();
-		int width = gDevice.getDisplayMode().getWidth();
-		int height = gDevice.getDisplayMode().getHeight();
+		int width = gDevice.getDisplayMode().getWidth();;
+		int height = gDevice.getDisplayMode().getHeight();;
 		
 		window = new JFrame();
+		//window.setResizable(true);
 		window.setSize(width, height);
-		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		window.setUndecorated(true);
+		//window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		//window.setUndecorated(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.black);
 		window.setLayout(null);
 		con = window.getContentPane();
 		
-		int tmpX = (int) Math.round(1366 * 340 / width);
-		int tmpY = (int) Math.round(768 * 100 / height);
-		int tmpW = (int) Math.round(1366 * 600 / width);
-		int tmpH = (int) Math.round(768 * 150 / height);
+		int tmpX = (int) Math.round(width * 0.125);
+		int tmpY = (int) Math.round(height * 0.125);
+		int tmpW = (int) Math.round(width * 0.75);
+		int tmpH = (int) Math.round(height * 0.255);
 		
 		titlePanel = new JPanel();
-		titlePanel.setBounds(tmpX, tmpY, tmpW, tmpH);
+		titlePanel.setBounds(width/2 - 510, tmpY, tmpW, tmpH);
 		//titlePanel.setBounds(340, 100, 600, 150);
 		titlePanel.setBackground(Color.black);
 		titleLabel = new JLabel("ADVENTURE");
 		titleLabel.setForeground(Color.white);
 		titleLabel.setFont(titleFont);
 		
+		tmpX = (int) Math.round(width * 0.125);
+		tmpY = (int) Math.round(height * 0.125);
+		tmpW = (int) Math.round(width * 0.75);
+		tmpH = (int) Math.round(height * 0.255);
+		
 		startButtonPanel = new JPanel();
-		startButtonPanel.setBounds(520, 500, 230, 60);
+		startButtonPanel.setBounds(560, 500, 230, 60);
 		startButtonPanel.setBackground(Color.black);
 		
 		startButton = new JButton("START GAME");
@@ -100,16 +106,19 @@ public class Interface
 		exitButtonPanel.add(exitButton);
 		startButtonPanel.add(startButton);
 		titlePanel.add(titleLabel);	
-		setFullScreen();
+		//setFullScreen();
+		//window.pack();
+		window.setLocationRelativeTo(null);
 		window.setVisible(true);
+		
 		
 	}
 	
-	public void setFullScreen()
+	/*public void setFullScreen()
 	{
 		gDevice.setFullScreenWindow(window);
 		window.setAlwaysOnTop(true);
-	}
+	}*/
 	
 	public void createGameScreen()
 	{
