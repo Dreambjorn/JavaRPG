@@ -1,4 +1,4 @@
-package ItemDatabase;
+package itemDatabase;
 
 public class Item 
 {

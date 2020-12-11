@@ -1,18 +1,18 @@
-package Entity;
+package entity;
 
 public class Enemy extends Character
 {
 	private int baseHp;
 	private int baseExp;
-	private int Exp;
 	private String description;
 	private int baseAtk;
 	private int maxAtk;
 	private int maxHp;
 	private int crrHp;
+	private int lootId;
 	
 	public Enemy(String name, int baseAtk, String description, 
-			int eqItem, int baseHp, int baseExp)
+			int eqItem, int baseHp, int baseExp, int loot)
 	{
 		super(name, eqItem);
 		this.description = description;
@@ -22,21 +22,21 @@ public class Enemy extends Character
 		this.crrHp = this.baseHp;
 		this.maxHp = this.baseHp;
 		this.maxAtk = this.baseAtk;
-		this.Exp = this.baseExp;
+		this.lootId = lootId;
 	}
 	
 	public Enemy()
 	{		
 	}
-	
-	public int getExp() 
-	{
-		return Exp;
-	}
 
-	public void setExp(int modifier) 
+	public int getLootId()
 	{
-		this.Exp += modifier;
+		return lootId;
+	}
+	
+	public void setBaseExp(int modifier) 
+	{
+		this.baseExp += modifier;
 	}
 
 	public int getBaseHp() 
