@@ -1,0 +1,45 @@
+[
+    {
+        "region": {
+            "name": "Starfell City",
+            "enemyid": "012",
+            "description": "Starfell",
+            "reqlevel": "1"
+        }
+    },
+    {
+         "region": {
+            "name": "Floodshell Valley",
+            "enemyid": "012",
+            "description": "Floodshell",
+            "reqlevel": "5"
+        }
+    },
+    {
+        "region": {
+            "name": "Shun'aq Desert",
+            "enemyid": "012",
+            "description": "Shun'aq'",
+            "reqlevel": "10"
+        }
+        
+    }, 
+    {
+        "region": {
+            "name": "Uthluum's Mountain",
+            "enemyid": "012",
+            "description": "Uthluum's Mountain",
+            "reqlevel": "15"
+        }
+        
+    },
+    {
+        "region": {
+            "name": "Moghgdulg",
+            "enemyid": "012",
+            "description": "Moghgdulg",
+            "reqlevel": "20"
+        }
+        
+    }  
+]
