@@ -3,7 +3,7 @@
         "item": {
             "title": "Wooden Sword",
             "attack": "2",
-            "description": "A sword."
+            "description": "A sword.",
             "role": "W"
         }
     },
@@ -11,15 +11,15 @@
         "item": {
             "title": "Wooden Bow",
             "attack": "1",
-            "description": "A bow."
-            "role": "A"
+            "description": "A bow.",
+            "role": "R"
         }
     },
     {
         "item": {
             "title": "Wooden Staff",
             "attack": "3",
-            "description": "A staff."
+            "description": "A staff.",
             "role": "M"
         }
     }  

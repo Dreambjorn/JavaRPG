@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 import java.io.FileNotFoundException; // Import this class to handle errors
 import java.io.FileReader;
@@ -57,7 +57,8 @@ public class EnemyList extends Enemy
         		(String) enemyObject.get("description"), 
         		(int) Integer.parseInt((String) enemyObject.get("item")),
         		(int) Integer.parseInt((String) enemyObject.get("basehp")),
-        		(int) Integer.parseInt((String) enemyObject.get("basexp")));
+        		(int) Integer.parseInt((String) enemyObject.get("basexp")),
+        		(int) Integer.parseInt((String) enemyObject.get("loot")));
         count ++;
         //enemyData.toString();
         /*long endTime = System.nanoTime();

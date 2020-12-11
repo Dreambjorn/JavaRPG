@@ -6,17 +6,19 @@
             "description": "A bandit.",
             "item": "0",
             "basehp": "12",
-            "basexp": "2"
+            "basexp": "5",
+            "loot": "0"
         }
     },
     {
         "enemy": {
-            "name": "Troll",
-            "attack": "10",
+            "name": "Goblin",
+            "attack": "4",
             "description": "An ugly troll.",
-            "item": "0",
+            "item": "1",
             "basehp": "20",
-            "basexp": "10"
+            "basexp": "10",
+            "loot": "0"
         }
     },
     {
@@ -26,7 +28,8 @@
             "description": "A mage.",
             "item": "2",
             "basehp": "9",
-            "basexp": "3"
+            "basexp": "3",
+            "loot": "2"
         }
     }  
 ]
