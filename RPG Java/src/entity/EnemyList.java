@@ -64,4 +64,9 @@ public class EnemyList extends Enemy
         /*long endTime = System.nanoTime();
         System.out.println("Took "+(endTime - startTime) + " ns"); */
     }
+	
+	public int getCount()
+	{
+		return this.count;
+	}
 }
