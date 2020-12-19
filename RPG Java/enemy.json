@@ -14,11 +14,11 @@
         "enemy": {
             "name": "Goblin",
             "attack": "4",
-            "description": "An ugly troll.",
+            "description": "An ugly goblin.",
             "item": "1",
-            "basehp": "20",
+            "basehp": "10",
             "basexp": "10",
-            "loot": "0"
+            "loot": "1"
         }
     },
     {

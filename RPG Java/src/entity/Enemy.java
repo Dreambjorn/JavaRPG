@@ -10,9 +10,10 @@ public class Enemy extends Character
 	private int maxHp;
 	private int crrHp;
 	private int lootId;
+	private int lvl = 1;
 	
 	public Enemy(String name, int baseAtk, String description, 
-			int eqItem, int baseHp, int baseExp, int loot)
+			int eqItem, int baseHp, int baseExp, int lootId)
 	{
 		super(name, eqItem);
 		this.description = description;
@@ -29,6 +30,15 @@ public class Enemy extends Character
 	{		
 	}
 
+	public void scale() 
+	{
+		this.lvl += 1;
+		this.setBatk();
+		this.setBaseHp();
+		this.setScaleExp();
+		this.maxAtk = this.baseAtk;
+	}
+	
 	public int getLootId()
 	{
 		return lootId;
@@ -39,11 +49,21 @@ public class Enemy extends Character
 		this.baseExp += modifier;
 	}
 
+	public void setScaleExp()
+	{
+		this.baseExp = (int)(this.lvl * this.baseExp / 1.5);
+	}
+	
 	public int getBaseHp() 
 	{
 		return baseHp;
 	}
 
+	public void setBaseHp()
+	{
+		this.baseHp = (int)(this.lvl * this.baseHp / 1.5);
+	}
+	
 	public int getBaseExp() 
 	{
 		return baseExp;
@@ -59,9 +79,9 @@ public class Enemy extends Character
 		return baseAtk;
 	}
 
-	public void setBatk(int atk) 
+	public void setBatk() 
 	{
-		this.baseAtk = atk;
+		this.baseAtk = (int)(this.lvl * this.baseAtk / 1.5);
 	}
 
 	public int getMaxAtk() 
@@ -79,9 +99,9 @@ public class Enemy extends Character
 		return maxHp;
 	}
 
-	public void setMaxHp(int modifier) 
+	public void setMaxHp() 
 	{
-		this.maxHp = this.baseHp + modifier;
+		this.maxHp = this.baseHp;
 		this.crrHp = this.maxHp;
 	}
 	

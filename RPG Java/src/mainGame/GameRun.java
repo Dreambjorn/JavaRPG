@@ -27,7 +27,7 @@ public class GameRun extends DataInit
 		//... -> battle begins
 		//unknown person tricks you and let you fight alone
 		System.out.println();
-		BattleSystem.autoBattle(0, 2);
+		BattleSystem.autoBattle(1, 2);
 		System.out.println();
 		for(int i = 0; i < player.getItemCount(); i ++)
 		{
@@ -55,9 +55,13 @@ public class GameRun extends DataInit
 		{
 			player.setMaxAtk(itemId.itemData[player.getEqItem()].getAtk());
 			player.setMaxHp();
+			enemyScaling();
 			System.out.println(player.getName() + " has advanced to level " + player.getCrrLevel() + ".");
 			System.out.println();
 			player.toString();
+			System.out.println();
+			enemy.enemyData[1].toString();
+			//System.out.println(enemy.enemyData[1].getLootId());
 		}
 	}
 }
