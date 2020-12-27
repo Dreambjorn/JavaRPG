@@ -1,0 +1,54 @@
+.root
+{
+	-fx-background-image: url(../image/rpg.jpg);
+	-fx-background-size: 100% 100%;
+}
+
+.title
+{
+	-fx-font-family: Cambria;
+	-fx-font-size: 120;
+}
+
+.menuButton
+{
+    -fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+}
+
+.backButton
+{
+	-fx-background-color: transparent;
+    -fx-border-style: none;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+}
+ 
+.backButton:hover
+{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+.menuButton:hover
+{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+
+.panel
+{
+	 -fx-background-color: linear-gradient(from 100% 100% to 100% 100%, rgba(0,0,0,0.7), rgba(0,0,0,0));
+	
+}
