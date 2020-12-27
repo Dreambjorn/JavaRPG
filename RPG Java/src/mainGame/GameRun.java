@@ -8,7 +8,7 @@ public class GameRun extends DataInit
 	public static PlayerClass player = playerInit();
 	public static boolean checkBattle = false;
 	
-	public static void main(String[] args)
+	//public static void main(String[] args)
 	{
 		
 		dataInit();
