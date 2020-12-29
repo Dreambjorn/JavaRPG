@@ -6,6 +6,7 @@ import entity.Enemy;
 public class BattleSystem extends GameRun 
 {
 	private static Enemy crrEnemy;
+	public static boolean checkBattle = false;
 	
 	public static void autoBattle(int enemyId, int quantity)
 	{
@@ -14,6 +15,7 @@ public class BattleSystem extends GameRun
 		enemyQtInit(quantity);
 		
 		Random rand = new Random();
+		
 		while (player.getCrrHp() > 0 && crrEnemy.getCrrHp() > 0) // -> for the upcoming button from the GUI - method 
 			//to simply decrease the enemy hpbased on player's attack
 		{
@@ -30,25 +32,20 @@ public class BattleSystem extends GameRun
 				break;
 		}
 		
-		System.out.println(player.getName() + "'s remaining HP: " + player.getCrrHp());
-		System.out.println(crrEnemy.getName() + "'s remaining HP: " + crrEnemy.getCrrHp());
+		//System.out.println(player.getName() + "'s remaining HP: " + player.getCrrHp());
+		//System.out.println(crrEnemy.getName() + "'s remaining HP: " + crrEnemy.getCrrHp());
 		
 		if(player.getCrrHp() > 0)
 		{	
 			player.resetHp();
-			System.out.println(player.getName() + "'s HP has been restored to " + player.getCrrHp() + ".");
+			//System.out.println(player.getName() + "'s HP has been restored to " + player.getCrrHp() + ".");
 			
 			player.setCrrExp(crrEnemy.getBaseExp());
-			levelUp();
-			
-			int random = 20 + rand.nextInt(50);
-			if (random >= 45)
-			{
-				player.setInventory(crrEnemy.getLootId());
-			}
+			Reward.levelUp();
+			Reward.loot(crrEnemy);	
 		}
-		else
-			System.out.println("YOU DIED!");
+		/*else
+			System.out.println("YOU DIED!");*/
 	}
 	
 	public static void manualBattle(int enemyId, int quantity)
@@ -57,6 +54,7 @@ public class BattleSystem extends GameRun
 		enemyQtInit(quantity);
 		
 		Random rand = new Random();
+		
 		if (player.getCrrHp() > 0 && crrEnemy.getCrrHp() > 0) // -> for the upcoming button from the GUI - method 
 			//to simply decrease the enemy hpbased on player's attack
 		{
@@ -72,8 +70,10 @@ public class BattleSystem extends GameRun
 			if (player.getCrrHp() <= 0)
 				checkBattle = true;
 		}
+		
 		System.out.println(player.getName() + "'s remaining HP: " + player.getCrrHp());
 		System.out.println(crrEnemy.getName() + "'s remaining HP: " + crrEnemy.getCrrHp());
+		
 		if(player.getCrrHp() > 0)
 		{	
 			player.resetHp();

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="char" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <bottom>
+      <Pane prefHeight="90.0" prefWidth="1366.0" styleClass="panel" BorderPane.alignment="CENTER">
+         <children>
+            <Text focusTraversable="true" layoutX="16.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="WARRIOR" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="1334.6708984375">
+               <font>
+                  <Font name="Cambria" size="55.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.31553398058252413" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+            <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+            <Button fx:id="menu1" alignment="CENTER" contentDisplay="CENTER" layoutX="1224.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="NEXT">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="678.0" prefWidth="365.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text focusTraversable="true" layoutX="-11.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="STATS" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="350.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4757281553398057" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="55.0" />
+               </font>
+            </Text>
+            <Text fx:id="hp" focusTraversable="true" layoutX="-9.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="HP: 0" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="346.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4757281553398057" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+            </Text>
+            <Text fx:id="attack" focusTraversable="true" layoutX="-9.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="ATTACK: 0" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="346.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4757281553398057" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+            </Text>
+            <Text focusTraversable="true" layoutX="-9.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="WEAPON: SWORD, AXE" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="346.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4757281553398057" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </right>
+   <left>
+      <Pane prefHeight="646.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text focusTraversable="true" layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="NAME: SHIRO" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="346.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4514563106796115" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="55.0" />
+               </font>
+            </Text>
+            <Button fx:id="female" alignment="CENTER" contentDisplay="CENTER" layoutX="143.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleChar" prefHeight="61.0" prefWidth="162.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="FEMALE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="male" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleChar" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MALE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Text focusTraversable="true" layoutX="127.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="/" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="15.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.4757281553398057" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="669.0" fitWidth="337.0" layoutX="159.0" layoutY="21.0">
+               <image>
+                  <Image url="@../image/1f.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
