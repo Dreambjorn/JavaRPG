@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="fields" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <bottom>
+      <Pane prefHeight="337.0" prefWidth="1366.0" styleClass="panel" BorderPane.alignment="CENTER">
+         <children>
+            <Text focusTraversable="true" layoutX="16.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="You decide to:" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="1334.6708984375">
+               <font>
+                  <Font name="Cambria" size="55.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.7184466019417475" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+            <Button fx:id="choice1" layoutX="475.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="FIGHT FOR YOUR LIFE (WARRIOR)">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.5631067961165049" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="choice2" layoutX="475.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="PRAY TO THE GODS (WIZARD)">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.5631067961165049" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="choice3" layoutX="455.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="457.0" style="-fx-background-color: null;" styleClass="menuButton" text="CONCEAL YOUR PRESENCE (RANGER)">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.5631067961165049" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="choice4" layoutX="475.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="ACCEPT YOUR FATE">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.5631067961165049" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

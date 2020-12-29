@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="fields" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <bottom>
+      <Pane onMouseClicked="#handleQuit" prefHeight="258.0" prefWidth="1366.0" styleClass="panel" BorderPane.alignment="CENTER">
+         <children>
+            <Text focusTraversable="true" layoutX="16.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="You got on a silent grain field. You stand there for some time, trying to understand what's happening. The wind starts blowing from behind you. " textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="1334.6708984375">
+               <font>
+                  <Font name="Cambria" size="55.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.24757281553398044" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Text>
+            <ImageView fitHeight="48.0" fitWidth="41.0" layoutX="1310.0" layoutY="196.0">
+               <image>
+                  <Image url="@../image/arrow.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="next2" mnemonicParsing="false" onAction="#handleNext" prefHeight="259.0" prefWidth="1366.0" style="-fx-background-color: null;" styleClass="menuButton" />
+         </children>
+      </Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

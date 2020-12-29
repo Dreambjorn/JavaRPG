@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="char" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <bottom>
+      <Pane prefHeight="90.0" prefWidth="1366.0" style="-fx-background-color: null;" styleClass="panel" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Pane prefHeight="678.0" prefWidth="365.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Pane prefHeight="646.0" prefWidth="346.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="quit" alignment="CENTER" contentDisplay="CENTER" layoutX="257.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="QUIT">
+               <font>
+                  <Font name="Cambria" size="31.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+            <Text focusTraversable="true" layoutX="27.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="YOU DIED..." textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="601.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.31553398058252413" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
