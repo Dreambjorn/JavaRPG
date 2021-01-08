@@ -141,13 +141,32 @@ public class SceneController extends Stage
 		if(event.getSource() == attackButton) 
 		{
 			BattleSystem.manualBattle(1, 3);
+			
 			name.setText(GameRun.player.getName().toUpperCase());
 			hpPlayer.setText("HP: " + String.valueOf(GameRun.player.getCrrHp()) + " / " 
 			 					+ String.valueOf(GameRun.player.getMaxHp()));
-			hpGoblin.setText("HP: " + String.valueOf(BattleSystem.crrEnemy.getCrrHp()) + " / " 
-			 		+ String.valueOf(BattleSystem.crrEnemy.getMaxHp()));
+			
+			if(BattleSystem.checkBattle == false)
+			{
+				hpGoblin.setText("HP: " + String.valueOf(BattleSystem.crrEnemy.getCrrHp()) + " / " 
+						+ String.valueOf(BattleSystem.crrEnemy.getMaxHp()));
+				
+				if(BattleSystem.hitCheck)
+					textBattleEnemy.setText("GOBLIN DEALT " + String.valueOf(BattleSystem.crrEnemy.getMaxAtk()) + " DAMAGE");
+				else
+					textBattleEnemy.setText("GOBLIN MISSED");
+			}		
+			else
+				{
+				hpGoblin.setText("HP: 0" + " / " 
+						+ String.valueOf(BattleSystem.crrEnemy.getMaxHp()));
+				textBattleEnemy.setText("GOBLIN DIED");
+				}
+						
+			
 			textBattlePlayer.setText("YOU DEALT " + String.valueOf(GameRun.player.getMaxAtk()) + " DAMAGE");
-			textBattleEnemy.setText("GOBLIN DEALT " + String.valueOf(BattleSystem.crrEnemy.getMaxAtk()) + " DAMAGE");
+			
+			
 			/*if(BattleSystem.checkBattle == true)
 				DataInit.resetData();*/
 			if(BattleSystem.crrEnemy.getCrrHp() <= 0)
@@ -270,6 +289,8 @@ public class SceneController extends Stage
         	DataInit.resetData();
         	BattleSystem.checkPlayer = false;
         	BattleSystem.checkQt = false;
+        	BattleSystem.checkBattle = false;
+        	BattleSystem.hitCheck = false;
         	checkMenu = true;
         	popup = new Stage();
         }
