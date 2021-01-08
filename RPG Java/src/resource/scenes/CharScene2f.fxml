@@ -46,7 +46,7 @@
                      </stops>
                   </LinearGradient>
                </textFill></Button>
-            <Button fx:id="menu1" alignment="CENTER" contentDisplay="CENTER" layoutX="1224.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="NEXT">
+            <Button fx:id="playerNext1" alignment="CENTER" contentDisplay="CENTER" layoutX="1224.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="NEXT">
                <effect>
                   <DropShadow />
                </effect>

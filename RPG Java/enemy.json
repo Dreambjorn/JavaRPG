@@ -6,18 +6,18 @@
             "description": "A bandit.",
             "item": "0",
             "basehp": "12",
-            "basexp": "5",
+            "basexp": "3",
             "loot": "0"
         }
     },
     {
         "enemy": {
             "name": "Goblin",
-            "attack": "4",
+            "attack": "1",
             "description": "An ugly goblin.",
             "item": "1",
-            "basehp": "10",
-            "basexp": "10",
+            "basehp": "12",
+            "basexp": "3",
             "loot": "1"
         }
     },

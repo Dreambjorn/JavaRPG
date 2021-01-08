@@ -39,7 +39,7 @@
                      </stops>
                   </LinearGradient>
                </textFill></Button>
-            <Text focusTraversable="true" layoutX="27.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="YOU DIED..." textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="601.6708984375">
+            <Text focusTraversable="true" layoutX="27.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="TO BE CONTINUED..." textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="601.6708984375">
                <effect>
                   <DropShadow />
                </effect>

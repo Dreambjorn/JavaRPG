@@ -33,7 +33,9 @@ public class GUIMain extends Application
 		//se citesc denumirile XML dintr-un file in array-ul arrayXML
 		/*for(int i = 0; i < 1; i++)
 			root1[i] = FXMLLoader.load(getClass().getResource(arrayXML[i]));*/
-		
+		GameRun.player.preInit();
+		DataInit.dataInit();
+		BattleSystem.preInitEnemy();
 		//Font.loadFont(Main.class.getResource("/resource/fonts/TheWildBreathOfZelda-15Lv.ttf").toExternalForm(), 120);
 		//FXMLLoader loader = new FXMLLoader();
 		root = FXMLLoader.load(getClass().getResource("../resource/scenes/Startmenu.fxml"));
@@ -47,6 +49,8 @@ public class GUIMain extends Application
 		//mainStage.setFullScreen(true);
 		//mainStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 		mainStage.show();
+		
+		
 		
 		mainPublic = mainStage;
 	}

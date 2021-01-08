@@ -1,4 +1,4 @@
-.root
+.rootMenu
 {
 	-fx-background-image: url(../image/rpg.jpg);
 	-fx-background-size: 100% 100%;
@@ -50,7 +50,7 @@
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 3px, 3px, 2px, 1px;
     -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
-    -fx-text-fill: -fx-text-base-color;
+    -fx-text-fill: #d2691e;
     -fx-alignment: CENTER;
     -fx-content-display: LEFT;
 }
@@ -68,5 +68,12 @@
 .panel
 {
 	 -fx-background-color: linear-gradient(from 100% 100% to 100% 100%, rgba(0,0,0,0.7), rgba(0,0,0,0));
-	
+}
+
+.popup
+{
+	-fx-background-size: 1200 900;
+    -fx-background-radius: 18 18 18 18;
+    -fx-border-radius: 18 18 18 18;
+    -fx-background-color: linear-gradient(from 100% 100% to 100% 100%, rgba(0,0,0,0.7), rgba(0,0,0,0));
 }
