@@ -30,7 +30,7 @@
                   <DropShadow />
                </effect>
             </Text>
-            <Button fx:id="choice1" layoutX="475.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="FIGHT FOR YOUR LIFE (WARRIOR)">
+            <Button fx:id="choice1" layoutX="475.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="backButton" text="FIGHT FOR YOUR LIFE (WARRIOR)">
                <font>
                   <Font name="Cambria" size="25.0" />
                </font>
@@ -43,7 +43,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="choice2" layoutX="475.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="PRAY TO THE GODS (WIZARD)">
+            <Button fx:id="choice2" layoutX="475.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="backButton" text="PRAY TO THE GODS (WIZARD)">
                <font>
                   <Font name="Cambria" size="25.0" />
                </font>
@@ -56,7 +56,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="choice3" layoutX="455.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="457.0" style="-fx-background-color: null;" styleClass="menuButton" text="CONCEAL YOUR PRESENCE (RANGER)">
+            <Button fx:id="choice3" layoutX="455.0" layoutY="214.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="457.0" style="-fx-background-color: null;" styleClass="backButton" text="CONCEAL YOUR PRESENCE (RANGER)">
                <font>
                   <Font name="Cambria" size="25.0" />
                </font>
@@ -69,7 +69,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="choice4" layoutX="475.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="menuButton" text="ACCEPT YOUR FATE">
+            <Button fx:id="choice4" layoutX="475.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="54.0" prefWidth="416.0" style="-fx-background-color: null;" styleClass="backButton" text="ACCEPT YOUR FATE">
                <font>
                   <Font name="Cambria" size="25.0" />
                </font>
@@ -88,21 +88,26 @@
    <right>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
-               <font>
-                  <Font name="Cambria" size="31.0" />
-               </font>
-               <effect>
-                  <DropShadow />
-               </effect>
-               <textFill>
-                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
-                     <stops>
-                        <Stop color="BLACK" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill></Button>
+            <Pane layoutX="37.0" layoutY="14.0" prefHeight="58.0" prefWidth="149.0" styleClass="panel">
+               <children>
+                  <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="28.0" prefWidth="148.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </right>

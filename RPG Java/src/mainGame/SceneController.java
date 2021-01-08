@@ -6,28 +6,48 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class SceneController extends Stage
 {
 	//must use before declaring variable used in fxml
 	@FXML private Text hp = new Text(); //needs to be initialized before being modified
 	@FXML private Text attack = new Text();
+	@FXML private Text name = new Text();
+	@FXML private Text hpGoblin = new Text();
+	@FXML private Text hpPlayer = new Text();
+	@FXML private Text textBattleEnemy = new Text();
+	@FXML private Text textBattlePlayer = new Text();
 	@FXML public Button quit, start, menu, next, next1, next2, 
 						next3, choice1, choice2, choice3, choice4,
 						playerNext1, playerNext2, male, female,
-						male1, female1, male2, female2;
+						male1, female1, male2, female2, attackButton,
+						fleeButton, itemPopup, ok1, ok2, endGame;
 	Parent root;
 	Scene scene;
+	static Stage popup = new Stage();
 	//Stage main;
 	public static String choice;
+	public boolean checkMenu = false;
 	
 	@FXML
 	public void initialize()
 	{
-		 hp.setText("HP: " + String.valueOf(GameRun.player.getMaxHp()));
-		 attack.setText("ATTACK: " + String.valueOf(GameRun.player.getMaxAtk()));
+		hp.setText("HP: " + String.valueOf(GameRun.player.getMaxHp()));
+		attack.setText("ATTACK: " + String.valueOf(GameRun.player.getMaxAtk()));
+		hpPlayer.setText("HP: " + String.valueOf(GameRun.player.getCrrHp()) + " / " 
+				 		+ String.valueOf(GameRun.player.getMaxHp()));
+		
+		name.setText(GameRun.player.getName().toUpperCase());
+		hpGoblin.setText("");
+		textBattlePlayer.setText("BATTLE HAS BEGUN");
+		textBattleEnemy.setText("");
+		//hpGoblin.setText("");
+		//hpGoblin.setText("HP: " + String.valueOf(BattleSystem.crrEnemy.getCrrHp()) + " / " 
+		//		 		+ String.valueOf(BattleSystem.crrEnemy.getMaxHp()));
 	}
 	
 	public void handleQuit()
@@ -115,6 +135,116 @@ public class SceneController extends Stage
         //stage.setMaximized(true);
         //stage.show();
 	}
+	
+	public void handleBattle(ActionEvent event) throws Exception 
+	{
+		if(event.getSource() == attackButton) 
+		{
+			BattleSystem.manualBattle(1, 3);
+			name.setText(GameRun.player.getName().toUpperCase());
+			hpPlayer.setText("HP: " + String.valueOf(GameRun.player.getCrrHp()) + " / " 
+			 					+ String.valueOf(GameRun.player.getMaxHp()));
+			hpGoblin.setText("HP: " + String.valueOf(BattleSystem.crrEnemy.getCrrHp()) + " / " 
+			 		+ String.valueOf(BattleSystem.crrEnemy.getMaxHp()));
+			textBattlePlayer.setText("YOU DEALT " + String.valueOf(GameRun.player.getMaxAtk()) + " DAMAGE");
+			textBattleEnemy.setText("GOBLIN DEALT " + String.valueOf(BattleSystem.crrEnemy.getMaxAtk()) + " DAMAGE");
+			/*if(BattleSystem.checkBattle == true)
+				DataInit.resetData();*/
+			if(BattleSystem.crrEnemy.getCrrHp() <= 0)
+			{
+				Parent rpopup = null;
+				
+				rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Reward1.fxml"));
+				popup = new Stage();
+				
+				if(popup.getStyle() == StageStyle.TRANSPARENT)
+				{
+					popup.show();
+				}
+				
+				else
+				{
+					Scene scene = new Scene(rpopup);
+					scene.setFill(Color.TRANSPARENT);
+		    		popup.setScene(scene);
+		    		popup.initStyle(StageStyle.UNDECORATED);
+		    		popup.initStyle(StageStyle.TRANSPARENT);
+		    		popup.show();
+				}
+			}
+		}
+	}
+	
+	public void handlePopup(ActionEvent event) throws Exception 
+	{
+		Parent rpopup = null;
+		if(event.getSource() == itemPopup) 
+        {	
+        	switch(GameRun.player.getRole())
+        	{
+        	case "W":
+        		rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Sword1.fxml"));
+				break;
+			case "R":
+				rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Bow1.fxml"));
+				break;
+			case "M":
+				rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Staff1.fxml"));
+				break;	
+        	}	        	
+        }	
+		
+		if(event.getSource() == itemPopup) 
+        {	
+        	switch(GameRun.player.getRole())
+        	{
+        	case "W":
+        		rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Sword1.fxml"));
+				break;
+			case "R":
+				rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Bow1.fxml"));
+				break;
+			case "M":
+				rpopup = FXMLLoader.load(getClass().getResource("../resource/scenes/Staff1.fxml"));
+				break;	
+        	}	        	
+        }	
+		//System.out.println(popup.getStyle());
+		
+		if(popup.getStyle() == StageStyle.TRANSPARENT)
+		{
+			popup.show();
+		}
+		
+		else
+		{
+			Scene scene = new Scene(rpopup);
+			scene.setFill(Color.TRANSPARENT);
+    		popup.setScene(scene);
+    		popup.initStyle(StageStyle.UNDECORATED);
+    		popup.initStyle(StageStyle.TRANSPARENT);
+    		popup.show();
+		}
+	}
+
+	public void handleClosePopup(ActionEvent event) throws Exception 
+	{
+		
+		if(event.getSource() == ok1) 
+        {	
+    		popup.close();
+    		root = FXMLLoader.load(getClass().getResource("../resource/scenes/BattleScene.fxml"));
+        	GUIMain.mainPublic.getScene().setRoot(root);
+        }
+		
+		if(event.getSource() == ok2) 
+        {	
+    		popup.close();
+    		root = FXMLLoader.load(getClass().getResource("../resource/scenes/PlayerScene2.fxml"));
+        	GUIMain.mainPublic.getScene().setRoot(root);
+        }
+	}
+	
 	public void handleNext(ActionEvent event) throws Exception 
 	{
 		//Stage stage = null;
@@ -126,6 +256,10 @@ public class SceneController extends Stage
         	root = FXMLLoader.load(getClass().getResource("../resource/scenes/Startmenu.fxml"));
         	GUIMain.mainPublic.getScene().setRoot(root);
         	DataInit.resetData();
+        	BattleSystem.checkPlayer = false;
+        	BattleSystem.checkQt = false;
+        	checkMenu = true;
+        	popup = new Stage();
         }
         
         else if(event.getSource() == next)
@@ -160,6 +294,7 @@ public class SceneController extends Stage
         {
         	GUIMain.mainPublic = (Stage) choice1.getScene().getWindow();
         	choice = "Fight for your life";
+        	DataInit.resetData();
         	GameRun.run();
         	hp.setText("HP: " + String.valueOf(GameRun.player.getMaxHp()));
    		 	attack.setText("ATTACK: " + String.valueOf(GameRun.player.getMaxAtk()));
@@ -173,6 +308,7 @@ public class SceneController extends Stage
         {
         	GUIMain.mainPublic = (Stage) choice2.getScene().getWindow();
         	choice = "Pray to the gods";
+        	DataInit.resetData();
         	GameRun.run();
         	hp.setText("HP: " + String.valueOf(GameRun.player.getMaxHp()));
    		 	attack.setText("ATTACK: " + String.valueOf(GameRun.player.getMaxAtk()));
@@ -184,6 +320,7 @@ public class SceneController extends Stage
         {
         	GUIMain.mainPublic = (Stage) choice3.getScene().getWindow();
         	choice = "Conceal your presence";
+        	DataInit.resetData();
         	GameRun.run();
         	hp.setText("HP: " + String.valueOf(GameRun.player.getMaxHp()));
    		 	attack.setText("ATTACK: " + String.valueOf(GameRun.player.getMaxAtk()));
@@ -202,6 +339,20 @@ public class SceneController extends Stage
         {
         	GUIMain.mainPublic = (Stage) playerNext1.getScene().getWindow();
         	root = FXMLLoader.load(getClass().getResource("../resource/scenes/PlayerScene1.fxml"));
+        	GUIMain.mainPublic.getScene().setRoot(root);
+        }
+        
+        else if(event.getSource() == playerNext2)
+        {
+        	GUIMain.mainPublic = (Stage) playerNext2.getScene().getWindow();
+        	root = FXMLLoader.load(getClass().getResource("../resource/scenes/PlayerScene3.fxml"));
+        	GUIMain.mainPublic.getScene().setRoot(root);
+        }
+        
+        else if(event.getSource() == endGame)
+        {
+        	GUIMain.mainPublic = (Stage) endGame.getScene().getWindow();
+        	root = FXMLLoader.load(getClass().getResource("../resource/scenes/EndGame.fxml"));
         	GUIMain.mainPublic.getScene().setRoot(root);
         }
         

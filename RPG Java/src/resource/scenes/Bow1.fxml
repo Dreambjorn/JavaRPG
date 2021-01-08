@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="340.0" prefWidth="500.0" styleClass="popup" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <center>
+      <Pane prefHeight="300.0" prefWidth="500.0" styleClass="popup" stylesheets="@../style/styleScene.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="175.0" fitWidth="168.0" layoutX="166.0" layoutY="14.0">
+               <image>
+                  <Image url="@../image/bow1.png" />
+               </image>
+            </ImageView>
+            <Text focusTraversable="true" layoutX="71.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="YOU RECEIVED WOODEN BOW" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="357.6708984375">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <fill>
+                  <LinearGradient endX="0.5485436893203883" endY="0.553398058252427" startX="0.5485436893203883">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="ok1" alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleClosePopup" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="OK">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="Cambria" size="23.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>

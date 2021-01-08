@@ -24,7 +24,7 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="quit" alignment="CENTER" contentDisplay="CENTER" layoutX="257.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="QUIT">
+            <Button fx:id="quit" alignment="CENTER" contentDisplay="CENTER" layoutX="257.0" layoutY="544.0" mnemonicParsing="false" onAction="#handleQuit" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="menuButton" stylesheets="@../style/styleScene.css" text="QUIT">
                <font>
                   <Font name="Cambria" size="31.0" />
                </font>

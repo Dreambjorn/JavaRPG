@@ -98,11 +98,16 @@ public class Enemy extends Character
 	{
 		return maxHp;
 	}
-
+	
 	public void setMaxHp() 
 	{
 		this.maxHp = this.baseHp;
 		this.crrHp = this.maxHp;
+	}
+	
+	public void qtMaxHp(int hp)
+	{
+		this.maxHp = hp;
 	}
 	
 	public int getCrrHp() 
@@ -115,6 +120,11 @@ public class Enemy extends Character
 		this.crrHp = this.crrHp - modifier;
 	}
 
+	public void setToZero()
+	{
+		this.crrHp = 0;
+	}
+	
 	@Override
 	public String toString()
 	{

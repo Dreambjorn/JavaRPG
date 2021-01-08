@@ -44,6 +44,11 @@ public class PlayerClass extends PC
 	{
 	}
 	
+	public void preInit()
+	{
+		setName();
+	}
+	
 	public void setRole(String role) 
 	{
 		this.role = role;
@@ -84,7 +89,12 @@ public class PlayerClass extends PC
 	{
 		this.crrHp = this.maxHp;
 	}
-
+	
+	public void setToZero()
+	{
+		this.crrHp = 0;
+	}
+	
 	public int getBaseAtk() 
 	{
 		return baseAtk;

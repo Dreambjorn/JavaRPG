@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="fields" stylesheets="@../style/styleScene.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainGame.SceneController">
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="37.0" layoutY="14.0" prefHeight="58.0" prefWidth="149.0" styleClass="panel">
+               <children>
+                  <Button fx:id="menu" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="59.0" prefWidth="142.0" style="-fx-background-color: null;" styleClass="backButton" stylesheets="@../style/styleScene.css" text="MENU">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font name="Cambria" size="31.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.46601941747572817" endY="0.5825242718446602" startX="0.46116504854368934">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </right>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="783.0" fitWidth="613.0" layoutX="407.0" layoutY="14.0">
+               <image>
+                  <Image url="@../image/npc1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+   <bottom>
+      <Pane prefHeight="262.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane onMouseClicked="#handleQuit" prefHeight="273.0" prefWidth="1366.0" styleClass="panel">
+               <children>
+                  <Text focusTraversable="true" layoutX="490.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="???" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="385.6708984375">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <fill>
+                        <LinearGradient endX="0.5485436893203883" endY="0.4708737864077669" startX="0.5485436893203883">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Cambria" size="45.0" />
+                     </font>
+                  </Text>
+                  <Text focusTraversable="true" layoutX="15.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menuButton" text="&quot;HEY YOU, YOU'RE GOING TO WANT THIS IF YOU WANT TO SURVIVE&quot;" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="1334.6708984375">
+                     <font>
+                        <Font name="Cambria" size="55.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="0.5485436893203883" endY="0.2427184466019416" startX="0.5485436893203883">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Text>
+                  <ImageView fitHeight="48.0" fitWidth="41.0" layoutX="1310.0" layoutY="196.0">
+                     <image>
+                        <Image url="@../image/arrow.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="itemPopup" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handlePopup" prefHeight="260.0" prefWidth="1366.0" style="-fx-background-color: null;" styleClass="menuButton" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

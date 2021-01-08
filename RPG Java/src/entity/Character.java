@@ -22,6 +22,10 @@ public class Character
 		return name;
 	}
 	
+	public void setName()
+	{
+		this.name = "name";
+	}
 	/*public int getAtk()
 	{
 		return atk;

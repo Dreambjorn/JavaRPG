@@ -11,8 +11,8 @@ public class GameRun extends DataInit
 	//public static void main(String[] args)
 	public static void run()
 	{
-		player = DataInit.playerInit();
-		DataInit.dataInit();
+		player = playerInit();
+		dataInit();
 	}
 		//player.setMaxAtk(itemId.itemData[player.getEqItem()].getAtk());
 		/*region.regionData[0].toString();
