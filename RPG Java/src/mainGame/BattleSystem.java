@@ -9,7 +9,7 @@ public class BattleSystem extends GameRun
 	public static boolean checkPlayer = false;
 	public static boolean checkBattle = false;
 	public static boolean checkQt = false;
-	
+	public static boolean hitCheck = false;
 	public static void autoBattle(int enemyId, int quantity)
 	{
 		// Battle system: (need a separate class for the battle system)
@@ -72,7 +72,12 @@ public class BattleSystem extends GameRun
 			
 			int random = 20 + rand.nextInt(60);
 			if (random >= 60)
+			{
 				player.setCrrHp(crrEnemy.getMaxAtk());
+				hitCheck = true;
+			}
+			else
+				hitCheck = false;
 			
 			if (player.getCrrHp() <= 0)
 			{	
