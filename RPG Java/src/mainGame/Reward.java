@@ -13,6 +13,8 @@ public class Reward
 			GameRun.player.setMaxHp();
 			DataInit.enemyScaling();
 		}
+		else
+			GameRun.player.setCrrExp(BattleSystem.crrEnemy.getBaseExp());
 	}
 	
 	public static void loot(Enemy enemy)
