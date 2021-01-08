@@ -172,6 +172,18 @@ public class SceneController extends Stage
 		    		popup.show();
 				}
 			}
+			
+			else if(BattleSystem.player.getCrrHp() <= 0)
+			{
+	        	root = FXMLLoader.load(getClass().getResource("../resource/scenes/EndScene.fxml"));
+	        	GUIMain.mainPublic.getScene().setRoot(root);
+			}
+		}
+		
+		else if(event.getSource() == fleeButton) 
+		{
+			root = FXMLLoader.load(getClass().getResource("../resource/scenes/EndScene.fxml"));
+        	GUIMain.mainPublic.getScene().setRoot(root);
 		}
 	}
 	
