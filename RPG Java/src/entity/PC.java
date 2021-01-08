@@ -6,7 +6,7 @@ public class PC extends Character
 	private int[] reqExp = new int[] {10, 15, 20, 25};
 	private int[] inventory = new int[50];
 	private static int count = 0;
-	private int crrExp;
+	private int crrExp = 0;
 	
 	public PC(String name, 
 			int eqItem)

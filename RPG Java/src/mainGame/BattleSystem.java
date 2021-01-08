@@ -88,6 +88,7 @@ public class BattleSystem extends GameRun
 			{
 				checkBattle = true;
 				crrEnemy.setToZero();
+				Reward.levelUp();
 			}
 		}
 		
