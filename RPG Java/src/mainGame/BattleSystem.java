@@ -60,8 +60,8 @@ public class BattleSystem extends GameRun
 			enemyQtInit(quantity, enemyId);
 		
 		Random rand = new Random();
-		System.out.println(crrEnemy.getCrrHp());
-		System.out.println(crrEnemy.getMaxAtk());
+		//System.out.println(crrEnemy.getCrrHp());
+		//System.out.println(crrEnemy.getMaxAtk());
 		if (player.getCrrHp() > 0 && crrEnemy.getCrrHp() > 0) // -> for the upcoming button from the GUI - method 
 			//to simply decrease the enemy hpbased on player's attack
 		{
